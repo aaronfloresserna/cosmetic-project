@@ -25,9 +25,9 @@ Ganancia = precio venta - costo proveedor - importación
 |---|---|
 | Frontend | Next.js |
 | Backend | Node.js (Next.js API Routes) |
-| Base de datos | PostgreSQL o PlanetScale |
-| Pagos México | Conekta o Stripe |
-| Deploy | Vercel |
+| Base de datos | PostgreSQL en AWS RDS (us-east-2) |
+| Pagos México | Conekta |
+| Deploy | AWS Amplify |
 
 ## Proveedores Candidatos
 | Proveedor | Sitio | Notas |
@@ -47,6 +47,8 @@ Ganancia = precio venta - costo proveedor - importación
 ## Pendientes
 - [ ] Verificar si Q-Depot o UMMA tienen API pública para crear órdenes automáticas
 - [ ] Definir proveedor principal
-- [ ] Definir pasarela de pago (Conekta vs Stripe)
 - [ ] Definir estrategia de importación / envío a México
-- [ ] Estructura inicial del proyecto Next.js
+- [ ] Configurar AWS Amplify (conectar repo, env vars, build settings)
+- [ ] **Conekta — BLOQUEADO:** requiere RFC / documentación persona física ante el SAT
+- [x] Estructura inicial del proyecto Next.js
+- [x] PostgreSQL en AWS RDS us-east-2 (kbeauty-db)
