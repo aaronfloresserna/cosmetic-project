@@ -1,65 +1,52 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="max-w-6xl mx-auto px-4">
+      {/* Hero */}
+      <section className="py-24 text-center">
+        <span className="text-xs uppercase tracking-widest text-neutral-400 font-medium">
+          K-Beauty · Cosméticos Coreanos
+        </span>
+        <h1 className="mt-4 text-5xl font-bold tracking-tight leading-tight">
+          Tu piel merece <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-pink-600">
+            lo mejor de Corea
+          </span>
+        </h1>
+        <p className="mt-5 text-neutral-500 max-w-md mx-auto text-lg">
+          Productos auténticos de las mejores marcas coreanas, entregados directo a tu puerta en México.
+        </p>
+        <div className="mt-8 flex gap-3 justify-center">
+          <Link
+            href="/shop"
+            className="bg-neutral-900 text-white px-6 py-3 rounded-full font-medium hover:bg-neutral-700 transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Ver catálogo
+          </Link>
+          <Link
+            href="/shop"
+            className="border border-neutral-200 text-neutral-700 px-6 py-3 rounded-full font-medium hover:border-neutral-400 transition-colors"
           >
-            Documentation
-          </a>
+            Conoce las marcas
+          </Link>
         </div>
-      </main>
+      </section>
+
+      {/* Features */}
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-6 pb-20 border-t border-neutral-100 pt-16">
+        {[
+          { icon: "✦", title: "100% Auténtico", desc: "Productos originales directamente de proveedores certificados en Corea." },
+          { icon: "⚡", title: "Envío directo", desc: "Tu pedido va del proveedor a tu puerta sin intermediarios." },
+          { icon: "💳", title: "Pago seguro MX", desc: "Paga con tarjeta mexicana. Próximamente con Conekta." },
+        ].map((f) => (
+          <div key={f.title} className="p-6 rounded-2xl border border-neutral-100 bg-neutral-50">
+            <span className="text-2xl">{f.icon}</span>
+            <h3 className="mt-3 font-semibold">{f.title}</h3>
+            <p className="mt-1 text-sm text-neutral-500">{f.desc}</p>
+          </div>
+        ))}
+      </section>
     </div>
   );
 }
