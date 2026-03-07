@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CartIndicator from "./cart-indicator";
 
 export default function Navbar() {
   return (
@@ -11,12 +12,10 @@ export default function Navbar() {
           <Link href="/shop" className="hover:text-neutral-900 transition-colors">
             Tienda
           </Link>
-          <Link
-            href="/shop"
-            className="bg-neutral-900 text-white px-4 py-1.5 rounded-full hover:bg-neutral-700 transition-colors"
-          >
-            Ver productos
+          <Link href="/admin" className="hover:text-neutral-900 transition-colors">
+            Admin
           </Link>
+          <CartIndicator />
         </nav>
       </div>
     </header>

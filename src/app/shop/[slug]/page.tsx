@@ -1,4 +1,5 @@
 import { getProductById, mockProducts } from "@/lib/mock-products";
+import AddToCartButton from "@/components/add-to-cart-button";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -66,12 +67,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             Stock: {product.stock} unidades · SKU: {product.supplierSku}
           </div>
 
-          <button
-            disabled
-            className="mt-6 w-full bg-neutral-900 text-white py-3 rounded-full font-medium opacity-50 cursor-not-allowed text-sm"
-          >
-            Agregar al carrito — Próximamente
-          </button>
+          <AddToCartButton product={product} />
         </div>
       </div>
     </div>
